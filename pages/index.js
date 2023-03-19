@@ -14,15 +14,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <nav className={styles.navigation}>
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Blogs</li>
-        </ul>
-      </nav>
       <div className={styles.main}>
         <h1 className={styles.heading}>Coder's Hunt</h1>
+      </div>
+      <div className={styles.container_image}>
+        <Image className={styles.image} src='/amazing.jpg' alt="Amazing Coder Image" width={400} height={250}></Image>
       </div>
       <div className={styles.blogs}>
         <h4 className={styles.small_heading}>Amazing Blogs for Coders by Hunting Coder.</h4>

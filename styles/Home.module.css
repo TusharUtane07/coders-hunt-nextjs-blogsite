@@ -24,6 +24,7 @@
   margin-top: 100px;
   text-align: center;
   border: 5px solid aquamarine;
+  padding: 20px;
 }
 .blogs{
   text-align: center;
@@ -56,4 +57,12 @@
 }
 .spaning{
   padding-top: 10px;
+}
+.container_image{
+  width: 100%;
+  text-align: center;
+  margin: 40px 0 40px 0;
+}
+.image{
+  border-radius: 10px;
 }
