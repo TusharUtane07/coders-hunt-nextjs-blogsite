@@ -9,5 +9,6 @@ export default function handler (req, res){
     // Endpoint is ready for usage.
     // http://localhost:3000/api/home?slug=learn-react-native
     res.status(200).json(JSON.parse(data))
+    // console.log(data)
   })
 }  
