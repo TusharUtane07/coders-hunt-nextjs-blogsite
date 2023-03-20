@@ -1,5 +1,6 @@
 {
     "title": "Learn Flutter with This Blog.",
     "description" : "Control every pixel to create customized & adaptive designs that look great on any screen. Take control of your codebase with plugins, testing, dev tools & build high quality apps. Multi-Platform. Single Codebase. Fast Development. Hot Reload. Open Source.",
-    "author" : "Tushar Utane"
+    "author" : "Tushar Utane",
+    "slug": "learn-flutter"
 }

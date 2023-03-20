@@ -1,14 +1,33 @@
 import { useRouter } from 'next/router'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Slug = () => {
     
-    const router = useRouter();
+  
+  const [post, setPost] = useState();
+  
+  const router = useRouter();
+  useEffect(() => {
+
+    if(!router.isReady) return;
+
     const {slug} = router.query
+    fetch(`http://localhost:3000/api/home?slug=${slug}`).then((a)=>{
+      return a.json();
+    }).then((parsed)=>{
+      setPost(parsed)
+    })
+  }, [router.isReady])
+    
   return (
     <div>
-    <h3>Blog: {slug}</h3>
-    <div><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo saepe tenetur rerum architecto iure maiores officiis vero eligendi, a labore dolore quibusdam exercitationem officia. Dolores debitis totam harum nihil laudantium nemo nam tempore in voluptas ipsum quos rerum illum ea dicta, maxime quas eos soluta odit ab asperiores repellat provident!</p></div>
+    <h3>Blog: {post && post.title}</h3>
+    <div>
+      <p>
+       {post && post.description}
+      </p>
+      <span>{post && post.author}</span>
+    </div>
      </div>
   )
 }

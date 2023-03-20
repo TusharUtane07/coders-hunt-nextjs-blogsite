@@ -25,7 +25,9 @@ const Blogs = () => {
         blogs.map((item, index)=>{
           return(
             <div key={index}>
-              <h2>{item.title}</h2>
+              <Link href={`/blogpost/${item.slug}`}>
+                <h2>{item.title}</h2>
+              </Link>
               <p>{item.description}</p>
               <span>{item.author}</span>
             </div>
