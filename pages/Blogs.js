@@ -2,17 +2,15 @@ import Head from "next/head";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
-const Blogs = () => {
+const Blogs = (props) => {
 
-  const [blogs, setBlogs] = useState([]);
+  // console.log(props)
 
-  useEffect(() => {
-    fetch('http://localhost:3000/api/blogs').then((a)=>{
-      return a.json();
-    }).then((parsed)=>{
-      setBlogs(parsed)
-    })
-  }, [])
+  const [blogs, setBlogs] = useState(props.allBlogs);
+
+  // useEffect(() => {
+    
+  // }, [])
   
 
   return (
@@ -38,5 +36,21 @@ const Blogs = () => {
     </>
   );
 };
+
+export async function getServerSideProps(context){
+
+  let data = await fetch('http://localhost:3000/api/blogs')
+  let allBlogs = await data.json()
+
+  // .then((a)=>{
+  //     return a.json();
+  //   }).then((parsed)=>{
+  //     setBlogs(parsed)
+  //   })
+
+  return{
+    props: {allBlogs}// This will be passed to page component as Props.
+  }
+}
 
 export default Blogs;
