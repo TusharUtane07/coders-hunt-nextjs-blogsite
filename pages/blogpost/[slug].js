@@ -1,11 +1,10 @@
-import { useRouter } from 'next/router'
-import React, { useEffect, useState } from 'react'
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
+import * as fs from "fs";
 
 const Slug = (props) => {
-    
-  
   const [post, setPost] = useState(props.allPost);
-  
+
   // const router = useRouter();
   // useEffect(() => {
 
@@ -18,29 +17,38 @@ const Slug = (props) => {
   //     setPost(parsed)
   //   })
   // }, [router.isReady])
-    
+
   return (
     <div>
-    <h3>Blog: {post && post.title}</h3>
-    <div>
-      <p>
-       {post && post.description}
-      </p>
-      <span>{post && post.author}</span>
+      <h3>Blog: {post && post.title}</h3>
+      <div>
+        <p>{post && post.description}</p>
+        <span>{post && post.author}</span>
+      </div>
     </div>
-     </div>
-  )
+  );
+};
+
+export async function getStaticPaths() {
+  return {
+    paths: [
+      { params: { slug: "learn-javascript" } },
+      { params: { slug: "learn-python" } },
+      { params: { slug: "learn-react-native" } },
+      { params: { slug: "learn-flutter" } },
+    ],
+    fallback: true, // false for blocking
+  };
 }
 
-export async function getServerSideProps(context){
+export async function getStaticProps(context) {
+  const { slug } = context.params;
 
-  const {slug} = context.query;
-  let data = await fetch(`http://localhost:3000/api/home?slug=${slug}`)
-  let allPost = await data.json()
+  let allPost = await fs.promises.readFile(`blog-data/${slug}.json`, "utf-8");
 
   return {
-    props: {allPost}
-  }
+    props: { allPost: JSON.parse(allPost) }, // will be passed to page as props
+  };
 }
 
-export default Slug
+export default Slug;

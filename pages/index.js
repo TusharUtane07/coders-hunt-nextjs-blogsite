@@ -1,9 +1,9 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
+import Head from "next/head";
+// import Image from 'next/image'
+import { Inter } from "next/font/google";
+import styles from "@/styles/Home.module.css";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
@@ -18,38 +18,56 @@ export default function Home() {
         <h1 className={styles.heading}>Coder's Hunt</h1>
       </div>
       <div className={styles.container_image}>
-        <Image className={styles.image} src='/amazing.jpg' alt="Amazing Coder Image" width={400} height={250}></Image>
+        {/* Here we can not use this component because we are generating static site.<Image className={styles.image} src='/amazing.jpg' alt="Amazing Coder Image" width={400} height={250}></Image> */}
+        <img
+          className={styles.image}
+          src="/amazing.jpg"
+          alt="Amazing Coder Image"
+          width={400}
+          height={250}
+        />
       </div>
       <div className={styles.blogs}>
-        <h4 className={styles.small_heading}>Amazing Blogs for Coders by Hunting Coder.</h4>
+        <h4 className={styles.small_heading}>
+          Amazing Blogs for Coders by Hunting Coder.
+        </h4>
       </div>
       <div className={styles.blog_section}>
-        <h5 className={styles.blog_heading}>
-         Javascript in 2023?</h5>
+        <h5 className={styles.blog_heading}>Javascript in 2023?</h5>
         <p className={styles.blog_content}>
-        &rarr;  Javascript is amazing langauge of Web, Which can help you build amazing web application,
-        <br/>
+          &rarr; Javascript is amazing langauge of Web, Which can help you build
+          amazing web application,
+          <br />
         </p>
-        <p className={styles.spaning}>&rarr;  Javascript is amazing langauge of Web, Which can help you build amazing web application</p>
+        <p className={styles.spaning}>
+          &rarr; Javascript is amazing langauge of Web, Which can help you build
+          amazing web application
+        </p>
       </div>
       <div className={styles.blog_section}>
-        <h5 className={styles.blog_heading}>
-         Javascript in 2023?</h5>
+        <h5 className={styles.blog_heading}>Javascript in 2023?</h5>
         <p className={styles.blog_content}>
-        &rarr;  Javascript is amazing langauge of Web, Which can help you build amazing web application,
-        <br/>
+          &rarr; Javascript is amazing langauge of Web, Which can help you build
+          amazing web application,
+          <br />
         </p>
-        <p className={styles.spaning}>&rarr;  Javascript is amazing langauge of Web, Which can help you build amazing web application</p>
+        <p className={styles.spaning}>
+          &rarr; Javascript is amazing langauge of Web, Which can help you build
+          amazing web application
+        </p>
       </div>
       <div className={styles.blog_section}>
-        <h5 className={styles.blog_heading}>
-         Javascript in 2023?</h5>
+        <h5 className={styles.blog_heading}>Javascript in 2023?</h5>
         <p className={styles.blog_content}>
-        &rarr;  Javascript is amazing langauge of Web, Which can help you build amazing web application,
-        <br/>
+          &rarr; Javascript is amazing langauge of Web, Which can help you build
+          amazing web application,
+          <br />
         </p>
-        <p className={styles.spaning}>&rarr;  Javascript is amazing langauge of Web, Which can help you build amazing web application</p>
+        <p className={styles.spaning}>
+          &rarr; Javascript is amazing langauge of Web, Which can help you build
+          amazing web application
+        </p>
       </div>
     </>
-  )
+  );
 }
