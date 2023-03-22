@@ -1,0 +1,37 @@
+.main_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.heading {
+  font: bold;
+  font-size: 50px;
+  letter-spacing: 10px;
+  color: aquamarine;
+}
+.container{
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: yellowgreen;
+    margin-top: 30px;
+}
+.labelS{
+    font-size: 30px;
+    margin-right: 10px;
+}
+.inputS{
+    height: 35px;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+.buttonS{
+  padding: 7px 15px 7px 15px;
+  font-size: 25px;
+  margin-top:30px;
+  margin-left: 25%;
+  background: #000;
+  border: 2px solid yellow;
+}
